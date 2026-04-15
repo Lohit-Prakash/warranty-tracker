@@ -12,6 +12,9 @@ COPY tsconfig.json ./
 COPY src ./src
 RUN npm run build
 
+# Prune devDependencies in-place before copying to runtime
+RUN npm prune --omit=dev
+
 # ---- Runtime image ----
 FROM node:20-alpine AS runtime
 
@@ -20,15 +23,14 @@ WORKDIR /app
 # Runtime deps for better-sqlite3 native bindings
 RUN apk add --no-cache libstdc++
 
-COPY package*.json ./
-RUN npm ci --omit=dev
-
+# Copy already-built + pruned node_modules — avoids rebuilding native modules
+COPY --from=build /app/node_modules ./node_modules
 COPY --from=build /app/dist ./dist
+COPY package*.json ./
 
-# Data and uploads volumes
-RUN mkdir -p /app/data /app/uploads
-ENV DB_PATH=/app/data/warrantyvault.db
-ENV UPLOADS_DIR=/app/uploads
+RUN mkdir -p /data /uploads
+ENV DB_PATH=/data/warrantyvault.db
+ENV UPLOADS_DIR=/uploads
 ENV NODE_ENV=production
 ENV PORT=3001
 
