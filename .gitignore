@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Build output
+client/dist/
+server/dist/
+
+# Environment variables — NEVER commit these
+.env
+server/.env
+client/.env
+*.env.local
+
+# SQLite databases
+*.db
+*.db-shm
+*.db-wal
+
+# Uploaded files (use Google Drive in production)
+server/uploads/
+uploads/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Test coverage
+coverage/

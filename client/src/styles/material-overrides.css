@@ -1,0 +1,855 @@
+/* ============================================================
+   Material Design 3 — Full UI overrides for WarrantyVault
+   Applied only when html.material class is present.
+   Transforms every Tailwind-based component to MD3 appearance.
+   ============================================================ */
+
+/* ── 1. PAGE BACKGROUND & BODY ─────────────────────────────── */
+html.material body {
+  background-color: var(--md-sys-color-background) !important;
+  color: var(--md-sys-color-on-background) !important;
+  font-family: 'Roboto', sans-serif !important;
+}
+
+html.material .min-h-screen {
+  background-color: var(--md-sys-color-background) !important;
+}
+
+/* Override Tailwind's bg-gray-50 / bg-gray-950 page backgrounds */
+html.material .bg-gray-50 { background-color: var(--md-sys-color-background) !important; }
+html.material .bg-gray-950 { background-color: var(--md-sys-color-background) !important; }
+
+/* ── 2. TOP APP BAR (Navbar) ────────────────────────────────── */
+
+/* The <nav> with sticky class = Top App Bar */
+html.material nav.sticky {
+  background-color: var(--md-sys-color-surface-container) !important;
+  border-bottom: none !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.08) !important;
+}
+
+/* Logo icon container */
+html.material nav.sticky .bg-primary-600.rounded-lg {
+  border-radius: var(--md-sys-shape-corner-medium) !important;
+  background-color: var(--md-sys-color-primary) !important;
+}
+
+/* Navbar app title */
+html.material nav.sticky .font-bold.text-lg {
+  color: var(--md-sys-color-on-surface) !important;
+  font-weight: 500 !important;
+  font-size: 1.125rem !important;
+  letter-spacing: 0 !important;
+}
+
+/* Search bar inside navbar */
+html.material nav.sticky input[type="text"] {
+  background-color: var(--md-sys-color-surface-container-high) !important;
+  color: var(--md-sys-color-on-surface) !important;
+  border-radius: var(--md-sys-shape-corner-full) !important;
+  border: none !important;
+  padding-left: 2.5rem !important;
+}
+
+html.material nav.sticky input[type="text"]::placeholder {
+  color: var(--md-sys-color-on-surface-variant) !important;
+}
+
+html.material nav.sticky input[type="text"]:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 2px var(--md-sys-color-primary) !important;
+  background-color: var(--md-sys-color-surface-container-highest) !important;
+}
+
+/* Nav link buttons (Dashboard, Analytics, Shared) */
+html.material nav.sticky a.rounded-lg {
+  border-radius: var(--md-sys-shape-corner-full) !important;
+  font-weight: 500 !important;
+  font-size: 0.875rem !important;
+  color: var(--md-sys-color-on-surface-variant) !important;
+  transition: background-color 150ms ease, color 150ms ease !important;
+}
+
+html.material nav.sticky a.rounded-lg:hover {
+  background-color: color-mix(in srgb, var(--md-sys-color-on-surface-variant) 8%, transparent) !important;
+  color: var(--md-sys-color-on-surface) !important;
+}
+
+/* Active nav link */
+html.material nav.sticky a.bg-primary-600 {
+  background-color: var(--md-sys-color-secondary-container) !important;
+  color: var(--md-sys-color-on-secondary-container) !important;
+}
+
+html.material nav.sticky a.bg-primary-600:hover {
+  background-color: var(--md-sys-color-secondary-container) !important;
+}
+
+/* Dark/light toggle icon button in nav */
+html.material nav.sticky button.rounded-lg {
+  border-radius: var(--md-sys-shape-corner-full) !important;
+  color: var(--md-sys-color-on-surface-variant) !important;
+}
+
+html.material nav.sticky button.rounded-lg:hover {
+  background-color: color-mix(in srgb, var(--md-sys-color-on-surface-variant) 8%, transparent) !important;
+  color: var(--md-sys-color-on-surface) !important;
+}
+
+/* User avatar button */
+html.material nav.sticky .bg-primary-600.rounded-full {
+  background-color: var(--md-sys-color-primary) !important;
+  color: var(--md-sys-color-on-primary) !important;
+}
+
+/* User dropdown menu */
+html.material nav.sticky .rounded-xl.bg-white,
+html.material nav.sticky .rounded-xl.bg-gray-900 {
+  background-color: var(--md-sys-color-surface-container-high) !important;
+  border: none !important;
+  border-radius: var(--md-sys-shape-corner-extra-small) !important;
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.12),
+    0 8px 24px rgba(0,0,0,0.14) !important;
+}
+
+html.material nav.sticky .rounded-xl a,
+html.material nav.sticky .rounded-xl button {
+  border-radius: 0 !important;
+  color: var(--md-sys-color-on-surface) !important;
+}
+
+html.material nav.sticky .rounded-xl a:hover,
+html.material nav.sticky .rounded-xl button:hover {
+  background-color: color-mix(in srgb, var(--md-sys-color-on-surface) 8%, transparent) !important;
+}
+
+/* ── 3. NAVIGATION DRAWER (Sidebar aside) ───────────────────── */
+
+html.material aside {
+  background: transparent !important;
+}
+
+/* Sidebar categories card */
+html.material aside .bg-white,
+html.material aside .bg-gray-900 {
+  background-color: var(--md-sys-color-surface-container-low) !important;
+  border: none !important;
+  border-radius: var(--md-sys-shape-corner-large) !important;
+  box-shadow: none !important;
+}
+
+/* Category section heading */
+html.material aside h3.font-semibold {
+  font-size: 0.6875rem !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  color: var(--md-sys-color-on-surface-variant) !important;
+}
+
+/* Category nav items */
+html.material aside ul button {
+  border-radius: var(--md-sys-shape-corner-full) !important;
+  height: 48px !important;
+  font-size: 0.875rem !important;
+  font-weight: 400 !important;
+  color: var(--md-sys-color-on-surface-variant) !important;
+  padding-left: 1rem !important;
+  padding-right: 0.75rem !important;
+}
+
+html.material aside ul button:hover {
+  background-color: color-mix(in srgb, var(--md-sys-color-on-surface) 8%, transparent) !important;
+  color: var(--md-sys-color-on-surface) !important;
+}
+
+/* Active nav item — MD3 uses secondary-container */
+html.material aside ul button.bg-primary-50,
+html.material aside ul button.bg-primary-900\/20 {
+  background-color: var(--md-sys-color-secondary-container) !important;
+  color: var(--md-sys-color-on-secondary-container) !important;
+  font-weight: 700 !important;
+}
+
+html.material aside ul button.bg-primary-50:hover,
+html.material aside ul button.bg-primary-900\/20:hover {
+  background-color: color-mix(in srgb, var(--md-sys-color-on-secondary-container) 8%, var(--md-sys-color-secondary-container)) !important;
+}
+
+/* Count badges inside nav items */
+html.material aside ul button .rounded-full {
+  border-radius: var(--md-sys-shape-corner-full) !important;
+  background-color: transparent !important;
+  color: var(--md-sys-color-on-surface-variant) !important;
+  font-size: 0.6875rem !important;
+  font-weight: 600 !important;
+  padding: 0 !important;
+  min-width: 1.25rem !important;
+  text-align: right !important;
+}
+
+html.material aside ul button.bg-primary-50 .rounded-full,
+html.material aside ul button.bg-primary-900\/20 .rounded-full {
+  color: var(--md-sys-color-on-secondary-container) !important;
+}
+
+/* Notification card in sidebar */
+html.material aside .bg-primary-50,
+html.material aside .bg-primary-900\/20 {
+  background-color: var(--md-sys-color-primary-container) !important;
+  border: none !important;
+  border-radius: var(--md-sys-shape-corner-large) !important;
+}
+
+html.material aside .text-primary-700,
+html.material aside .text-primary-300 {
+  color: var(--md-sys-color-on-primary-container) !important;
+}
+
+html.material aside .text-primary-600,
+html.material aside .text-primary-400 {
+  color: var(--md-sys-color-on-primary-container) !important;
+  opacity: 0.87 !important;
+}
+
+/* ── 4. STAT CARDS ──────────────────────────────────────────── */
+
+html.material .stat-card {
+  background-color: var(--md-sys-color-surface-container) !important;
+  border: none !important;
+  border-radius: var(--md-sys-shape-corner-medium) !important;
+  box-shadow: none !important;
+  border-top: 3px solid transparent !important;
+}
+
+html.material .stat-card--primary { border-top-color: var(--md-sys-color-primary) !important; }
+html.material .stat-card--green   { border-top-color: #16a34a !important; }
+html.material .stat-card--amber   { border-top-color: #d97706 !important; }
+html.material .stat-card--red     { border-top-color: var(--md-sys-color-error) !important; }
+html.material .stat-card--gray    { border-top-color: var(--md-sys-color-outline) !important; }
+
+/* Stat card icon container */
+html.material .stat-card .rounded-xl {
+  border-radius: var(--md-sys-shape-corner-medium) !important;
+}
+
+html.material .stat-card .bg-primary-100,
+html.material .stat-card .bg-primary-900\/30 {
+  background-color: var(--md-sys-color-primary-container) !important;
+  color: var(--md-sys-color-on-primary-container) !important;
+}
+
+html.material .stat-card--green .bg-green-100,
+html.material .stat-card--green .bg-green-900\/30 {
+  background-color: #CEEFCE !important;
+  color: #002108 !important;
+}
+
+html.material .stat-card--amber .bg-amber-100,
+html.material .stat-card--amber .bg-amber-900\/30 {
+  background-color: var(--md-custom-color-warning-container) !important;
+  color: var(--md-custom-color-on-warning-container) !important;
+}
+
+html.material .stat-card--red .bg-red-100,
+html.material .stat-card--red .bg-red-900\/30 {
+  background-color: var(--md-sys-color-error-container) !important;
+  color: var(--md-sys-color-on-error-container) !important;
+}
+
+html.material .stat-card--gray .bg-gray-100,
+html.material .stat-card--gray .bg-gray-800 {
+  background-color: var(--md-sys-color-surface-container-highest) !important;
+  color: var(--md-sys-color-on-surface-variant) !important;
+}
+
+/* Stat values */
+html.material .stat-card .text-3xl {
+  font-size: 2rem !important;
+  font-weight: 400 !important;
+  line-height: 1.2 !important;
+  color: var(--md-sys-color-on-surface) !important;
+}
+
+html.material .stat-card .text-sm.font-medium {
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  color: var(--md-sys-color-on-surface-variant) !important;
+}
+
+/* ── 5. PRODUCT CARDS ───────────────────────────────────────── */
+
+html.material .md-product-card {
+  background-color: var(--md-sys-color-surface-container) !important;
+  border: none !important;
+  border-radius: var(--md-sys-shape-corner-medium) !important;
+  box-shadow:
+    0 1px 2px rgba(0,0,0,0.08),
+    0 1px 4px rgba(0,0,0,0.06) !important;
+  transition: box-shadow 200ms ease !important;
+}
+
+html.material .md-product-card:hover {
+  box-shadow:
+    0 2px 6px rgba(0,0,0,0.10),
+    0 4px 12px rgba(0,0,0,0.10) !important;
+}
+
+html.material .md-product-card.border-primary-500 {
+  box-shadow:
+    0 0 0 2px var(--md-sys-color-primary),
+    0 2px 6px rgba(0,0,0,0.10) !important;
+}
+
+/* Photo thumbnail */
+html.material .md-product-card .rounded-t-xl {
+  border-radius: var(--md-sys-shape-corner-medium) var(--md-sys-shape-corner-medium) 0 0 !important;
+}
+
+/* Category badge — MD3 Assist Chip */
+html.material .md-product-card .rounded-full {
+  border-radius: var(--md-sys-shape-corner-full) !important;
+  font-size: 0.6875rem !important;
+  font-weight: 500 !important;
+  padding: 0.125rem 0.625rem !important;
+  border: 1px solid var(--md-sys-color-outline-variant) !important;
+  background-color: var(--md-sys-color-surface-container-highest) !important;
+  color: var(--md-sys-color-on-surface) !important;
+}
+
+/* Product name */
+html.material .md-product-card h3 {
+  color: var(--md-sys-color-on-surface) !important;
+  font-weight: 500 !important;
+  font-size: 0.9375rem !important;
+}
+
+html.material .md-product-card h3:hover,
+html.material .md-product-card:hover h3 {
+  color: var(--md-sys-color-primary) !important;
+}
+
+/* Brand / secondary text */
+html.material .md-product-card .text-gray-500,
+html.material .md-product-card .text-gray-400 {
+  color: var(--md-sys-color-on-surface-variant) !important;
+}
+
+/* Price */
+html.material .md-product-card .text-gray-700 {
+  color: var(--md-sys-color-on-surface) !important;
+}
+
+/* Progress bar track */
+html.material .md-product-card .bg-gray-100 {
+  background-color: var(--md-sys-color-surface-container-highest) !important;
+  border-radius: var(--md-sys-shape-corner-full) !important;
+}
+
+/* Date labels */
+html.material .md-product-card .text-gray-400 {
+  color: var(--md-sys-color-on-surface-variant) !important;
+  font-size: 0.6875rem !important;
+}
+
+/* Warranty status badge (the inline-block at bottom of card) */
+html.material .md-product-card .rounded-lg.inline-block {
+  border-radius: var(--md-sys-shape-corner-full) !important;
+  font-weight: 500 !important;
+  font-size: 0.6875rem !important;
+}
+
+/* Three-dot menu button */
+html.material .md-product-card button.rounded {
+  border-radius: var(--md-sys-shape-corner-full) !important;
+  color: var(--md-sys-color-on-surface-variant) !important;
+}
+
+html.material .md-product-card button.rounded:hover {
+  background-color: color-mix(in srgb, var(--md-sys-color-on-surface-variant) 8%, transparent) !important;
+  color: var(--md-sys-color-on-surface) !important;
+}
+
+/* Three-dot dropdown menu */
+html.material .md-product-card .rounded-xl.bg-white,
+html.material .md-product-card .rounded-xl.bg-gray-900 {
+  background-color: var(--md-sys-color-surface-container-high) !important;
+  border: none !important;
+  border-radius: var(--md-sys-shape-corner-extra-small) !important;
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.12),
+    0 8px 24px rgba(0,0,0,0.14) !important;
+}
+
+html.material .md-product-card .rounded-xl button {
+  color: var(--md-sys-color-on-surface) !important;
+  border-radius: 0 !important;
+}
+
+html.material .md-product-card .rounded-xl button:hover {
+  background-color: color-mix(in srgb, var(--md-sys-color-on-surface) 8%, transparent) !important;
+}
+
+html.material .md-product-card .rounded-xl button.text-red-600,
+html.material .md-product-card .rounded-xl button.text-red-400 {
+  color: var(--md-sys-color-error) !important;
+}
+
+html.material .md-product-card .rounded-xl button.text-red-600:hover,
+html.material .md-product-card .rounded-xl button.text-red-400:hover {
+  background-color: color-mix(in srgb, var(--md-sys-color-error) 8%, transparent) !important;
+}
+
+/* ── 6. FILTER CHIPS (FilterPills) ──────────────────────────── */
+
+html.material .md-filter-chips {
+  gap: 0.5rem !important;
+}
+
+html.material .md-filter-chips button {
+  border-radius: var(--md-sys-shape-corner-full) !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  padding: 0.375rem 1rem !important;
+  height: 2rem !important;
+  border: 1px solid var(--md-sys-color-outline) !important;
+  background-color: transparent !important;
+  color: var(--md-sys-color-on-surface-variant) !important;
+  transition: background-color 150ms ease, border-color 150ms ease !important;
+}
+
+html.material .md-filter-chips button:hover {
+  background-color: color-mix(in srgb, var(--md-sys-color-on-surface-variant) 8%, transparent) !important;
+  border-color: var(--md-sys-color-on-surface-variant) !important;
+}
+
+/* Active filter chip — primary-container */
+html.material .md-filter-chips button.bg-primary-600 {
+  background-color: var(--md-sys-color-primary-container) !important;
+  border-color: var(--md-sys-color-primary-container) !important;
+  color: var(--md-sys-color-on-primary-container) !important;
+}
+
+html.material .md-filter-chips button.bg-primary-600:hover {
+  background-color: color-mix(in srgb, var(--md-sys-color-on-primary-container) 8%, var(--md-sys-color-primary-container)) !important;
+}
+
+/* Count badge inside chip */
+html.material .md-filter-chips button .rounded-full {
+  background-color: transparent !important;
+  color: inherit !important;
+  padding: 0 0 0 0.25rem !important;
+  font-size: 0.6875rem !important;
+  font-weight: 600 !important;
+}
+
+/* ── 7. ALERT BANNER ────────────────────────────────────────── */
+
+html.material .md-banner {
+  background-color: var(--md-custom-color-warning-container) !important;
+  border: none !important;
+  border-radius: var(--md-sys-shape-corner-small) !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08) !important;
+}
+
+html.material .md-banner h3,
+html.material .md-banner .font-semibold {
+  color: var(--md-custom-color-on-warning-container) !important;
+}
+
+html.material .md-banner .text-amber-700,
+html.material .md-banner .text-amber-400 {
+  color: var(--md-custom-color-on-warning-container) !important;
+  opacity: 0.87 !important;
+}
+
+html.material .md-banner .text-amber-600,
+html.material .md-banner .text-amber-500 {
+  color: var(--md-custom-color-on-warning-container) !important;
+  opacity: 0.7 !important;
+}
+
+html.material .md-banner button {
+  color: var(--md-custom-color-on-warning-container) !important;
+  border-radius: var(--md-sys-shape-corner-full) !important;
+}
+
+html.material .md-banner button:hover {
+  background-color: color-mix(in srgb, var(--md-custom-color-on-warning-container) 8%, transparent) !important;
+}
+
+html.material .md-banner svg.text-amber-600,
+html.material .md-banner svg.text-amber-400 {
+  color: var(--md-custom-color-on-warning-container) !important;
+}
+
+/* ── 8. PAGINATION ──────────────────────────────────────────── */
+
+html.material .md-pagination button {
+  border-radius: var(--md-sys-shape-corner-full) !important;
+  color: var(--md-sys-color-on-surface-variant) !important;
+  font-weight: 500 !important;
+  transition: background-color 150ms ease !important;
+}
+
+html.material .md-pagination button:hover:not(:disabled) {
+  background-color: color-mix(in srgb, var(--md-sys-color-on-surface-variant) 8%, transparent) !important;
+}
+
+/* Active page */
+html.material .md-pagination button.bg-primary-600 {
+  background-color: var(--md-sys-color-primary) !important;
+  color: var(--md-sys-color-on-primary) !important;
+}
+
+html.material .md-pagination button.bg-primary-600:hover {
+  background-color: color-mix(in srgb, var(--md-sys-color-on-primary) 8%, var(--md-sys-color-primary)) !important;
+}
+
+/* Disabled prev/next */
+html.material .md-pagination button:disabled {
+  color: color-mix(in srgb, var(--md-sys-color-on-surface) 38%, transparent) !important;
+}
+
+/* ── 9. BULK ACTION BAR ─────────────────────────────────────── */
+
+html.material .md-bulk-bar {
+  background-color: var(--md-sys-color-secondary-container) !important;
+  border-radius: var(--md-sys-shape-corner-large) !important;
+  color: var(--md-sys-color-on-secondary-container) !important;
+}
+
+html.material .md-bulk-bar span {
+  color: var(--md-sys-color-on-secondary-container) !important;
+}
+
+html.material .md-bulk-bar button {
+  border-radius: var(--md-sys-shape-corner-full) !important;
+}
+
+/* ── 10. EMPTY STATE ─────────────────────────────────────────── */
+
+html.material .md-empty-state h2 {
+  font-size: 1.5rem !important;
+  font-weight: 400 !important;
+  color: var(--md-sys-color-on-surface) !important;
+}
+
+html.material .md-empty-state p {
+  color: var(--md-sys-color-on-surface-variant) !important;
+}
+
+html.material .md-empty-state svg path[fill="#e4e1fd"] { fill: var(--md-sys-color-primary-container) !important; }
+html.material .md-empty-state svg path[fill="#ccc7fb"] { fill: var(--md-sys-color-primary-container) !important; opacity: 0.7 !important; }
+html.material .md-empty-state svg path[stroke="#aba2f7"] { stroke: var(--md-sys-color-primary) !important; opacity: 0.5 !important; }
+html.material .md-empty-state svg path[stroke="#534AB7"] { stroke: var(--md-sys-color-primary) !important; }
+
+/* ── 11. LOGIN / AUTH PAGE CARD ─────────────────────────────── */
+
+/* Login page outer wrapper */
+html.material .min-h-screen.flex.items-center {
+  background-color: var(--md-sys-color-background) !important;
+}
+
+/* The white login card */
+html.material .rounded-2xl.bg-white,
+html.material .rounded-2xl.bg-gray-900 {
+  background-color: var(--md-sys-color-surface-container) !important;
+  border: none !important;
+  border-radius: var(--md-sys-shape-corner-extra-large) !important;
+  box-shadow:
+    0 1px 3px rgba(0,0,0,0.06),
+    0 4px 16px rgba(0,0,0,0.08) !important;
+}
+
+/* Login logo icon */
+html.material .rounded-2xl.bg-primary-600 {
+  border-radius: var(--md-sys-shape-corner-large) !important;
+  background-color: var(--md-sys-color-primary) !important;
+}
+
+/* Login form heading */
+html.material .text-2xl.font-bold {
+  font-weight: 400 !important;
+  color: var(--md-sys-color-on-surface) !important;
+}
+
+/* Login subtitle */
+html.material .text-sm.mt-1.text-gray-500,
+html.material .text-sm.mt-1.text-gray-400 {
+  color: var(--md-sys-color-on-surface-variant) !important;
+}
+
+/* Login error box */
+html.material .bg-red-50,
+html.material .bg-red-900\/20 {
+  background-color: var(--md-sys-color-error-container) !important;
+  border: none !important;
+  border-radius: var(--md-sys-shape-corner-extra-small) !important;
+  color: var(--md-sys-color-on-error-container) !important;
+}
+
+/* Google sign-in button */
+html.material a[href="/api/auth/google"] {
+  border: 1px solid var(--md-sys-color-outline) !important;
+  border-radius: var(--md-sys-shape-corner-full) !important;
+  background-color: transparent !important;
+  color: var(--md-sys-color-on-surface) !important;
+  font-weight: 500 !important;
+  transition: background-color 150ms ease !important;
+}
+
+html.material a[href="/api/auth/google"]:hover {
+  background-color: color-mix(in srgb, var(--md-sys-color-on-surface) 8%, transparent) !important;
+}
+
+/* Forgot password / Register links */
+html.material .text-primary-600,
+html.material .text-primary-400 {
+  color: var(--md-sys-color-primary) !important;
+}
+
+/* OR divider */
+html.material .border-t {
+  border-color: var(--md-sys-color-outline-variant) !important;
+}
+
+html.material .bg-white.text-gray-400,
+html.material .bg-gray-900.text-gray-500 {
+  background-color: var(--md-sys-color-surface-container) !important;
+  color: var(--md-sys-color-on-surface-variant) !important;
+}
+
+/* ── 12. SORT DROPDOWN & EXPORT DROPDOWN BUTTONS ────────────── */
+
+/* Generic icon-style action buttons in the filter bar */
+html.material .border-gray-200.rounded-lg,
+html.material .border-gray-800.rounded-lg {
+  border-radius: var(--md-sys-shape-corner-full) !important;
+  border-color: var(--md-sys-color-outline-variant) !important;
+  color: var(--md-sys-color-on-surface-variant) !important;
+  background-color: transparent !important;
+}
+
+html.material .border-gray-200.rounded-lg:hover,
+html.material .border-gray-800.rounded-lg:hover {
+  background-color: color-mix(in srgb, var(--md-sys-color-on-surface-variant) 8%, transparent) !important;
+  border-color: var(--md-sys-color-outline) !important;
+  color: var(--md-sys-color-on-surface) !important;
+}
+
+/* Selection mode active button */
+html.material .bg-primary-50.border-primary-300,
+html.material .bg-primary-900\/20.border-primary-300 {
+  background-color: var(--md-sys-color-secondary-container) !important;
+  border-color: var(--md-sys-color-secondary-container) !important;
+  color: var(--md-sys-color-on-secondary-container) !important;
+  border-radius: var(--md-sys-shape-corner-full) !important;
+}
+
+/* ── 13. DROPDOWN MENUS (SortDropdown, ExportDropdown) ──────── */
+
+html.material .rounded-xl.border.shadow-lg {
+  background-color: var(--md-sys-color-surface-container-high) !important;
+  border: none !important;
+  border-radius: var(--md-sys-shape-corner-extra-small) !important;
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.12),
+    0 8px 24px rgba(0,0,0,0.14) !important;
+}
+
+html.material .rounded-xl.border.shadow-lg button {
+  border-radius: 0 !important;
+  color: var(--md-sys-color-on-surface) !important;
+}
+
+html.material .rounded-xl.border.shadow-lg button:hover {
+  background-color: color-mix(in srgb, var(--md-sys-color-on-surface) 8%, transparent) !important;
+}
+
+/* ── 14. GENERAL CARD PATTERN (white bg + border + rounded-xl) ─ */
+/* Catch-all for any component that is a surface card */
+html.material .rounded-xl.bg-white.border,
+html.material .rounded-xl.bg-gray-900.border {
+  background-color: var(--md-sys-color-surface-container) !important;
+  border: none !important;
+  border-radius: var(--md-sys-shape-corner-medium) !important;
+  box-shadow:
+    0 1px 2px rgba(0,0,0,0.08),
+    0 1px 4px rgba(0,0,0,0.06) !important;
+}
+
+/* ── 15. TYPOGRAPHY OVERRIDES ───────────────────────────────── */
+
+/* MD3 Label Large for section headings */
+html.material h3.text-sm.font-semibold {
+  font-size: 0.6875rem !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+}
+
+/* Body text in cards */
+html.material .text-gray-900,
+html.material .text-gray-100 {
+  color: var(--md-sys-color-on-surface) !important;
+}
+
+html.material .text-gray-500,
+html.material .text-gray-400 {
+  color: var(--md-sys-color-on-surface-variant) !important;
+}
+
+/* ── 16. GENERAL BORDER TREATMENT ─────────────────────────────── */
+
+html.material .border-gray-200,
+html.material .border-gray-800 {
+  border-color: var(--md-sys-color-outline-variant) !important;
+}
+
+html.material .border-gray-100,
+html.material .border-gray-700 {
+  border-color: var(--md-sys-color-outline-variant) !important;
+  opacity: 0.5 !important;
+}
+
+/* ── 17. SKELETON LOADING ───────────────────────────────────── */
+
+html.material .animate-pulse .rounded-xl {
+  background-color: var(--md-sys-color-surface-container-high) !important;
+  border-radius: var(--md-sys-shape-corner-medium) !important;
+}
+
+html.material .animate-pulse .rounded-full {
+  background-color: var(--md-sys-color-surface-container-high) !important;
+}
+
+html.material .animate-pulse .rounded-md {
+  background-color: var(--md-sys-color-surface-container-high) !important;
+}
+
+/* ── 18. NOTIFICATION CENTER ────────────────────────────────── */
+
+html.material .notification-dropdown .bg-white,
+html.material .notification-dropdown .bg-gray-900 {
+  background-color: var(--md-sys-color-surface-container-high) !important;
+  border: none !important;
+  border-radius: var(--md-sys-shape-corner-extra-large) !important;
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.12),
+    0 8px 24px rgba(0,0,0,0.14) !important;
+}
+
+/* ── 19. DARK MODE ADJUSTMENTS ──────────────────────────────── */
+/* Ensure dark mode Tailwind overrides don't conflict with MD3 */
+
+html.material.dark .bg-gray-900 {
+  background-color: var(--md-sys-color-surface-container) !important;
+}
+
+html.material.dark .bg-gray-950 {
+  background-color: var(--md-sys-color-background) !important;
+}
+
+html.material.dark .bg-gray-800 {
+  background-color: var(--md-sys-color-surface-container-high) !important;
+}
+
+html.material.dark .bg-white {
+  background-color: var(--md-sys-color-surface-container) !important;
+}
+
+html.material.dark .border-gray-800,
+html.material.dark .border-gray-700 {
+  border-color: var(--md-sys-color-outline-variant) !important;
+}
+
+html.material.dark .text-gray-100,
+html.material.dark .text-gray-200 {
+  color: var(--md-sys-color-on-surface) !important;
+}
+
+html.material.dark .text-gray-400,
+html.material.dark .text-gray-500 {
+  color: var(--md-sys-color-on-surface-variant) !important;
+}
+
+html.material.dark .text-gray-300 {
+  color: var(--md-sys-color-on-surface) !important;
+  opacity: 0.87 !important;
+}
+
+/* ── 20. SIDEBAR CATEGORY COLOR DOTS ───────────────────────── */
+
+html.material aside ul button .w-2.h-2.rounded-full {
+  background-color: var(--md-sys-color-outline) !important;
+}
+
+html.material aside ul button.bg-primary-50 .w-2.h-2.rounded-full,
+html.material aside ul button.bg-primary-900\/20 .w-2.h-2.rounded-full {
+  background-color: var(--md-sys-color-on-secondary-container) !important;
+}
+
+/* ── 21. NOTIFICATION CENTER PANEL ─────────────────────────── */
+
+html.material .notification-dropdown .rounded-xl {
+  border-radius: var(--md-sys-shape-corner-extra-large) !important;
+}
+
+html.material .notification-dropdown .border-b {
+  border-color: var(--md-sys-color-outline-variant) !important;
+}
+
+html.material .notification-dropdown .text-gray-900,
+html.material .notification-dropdown .text-gray-100 {
+  color: var(--md-sys-color-on-surface) !important;
+}
+
+html.material .notification-dropdown .text-gray-500,
+html.material .notification-dropdown .text-gray-400 {
+  color: var(--md-sys-color-on-surface-variant) !important;
+}
+
+/* ── 22. PRODUCT CARD PROGRESS BAR COLORS ──────────────────── */
+
+html.material .md-product-card .bg-green-500 {
+  background-color: #188038 !important;
+}
+
+html.material .md-product-card .bg-amber-500 {
+  background-color: #E65100 !important;
+}
+
+html.material .md-product-card .bg-red-500 {
+  background-color: var(--md-sys-color-error) !important;
+}
+
+html.material .md-product-card .bg-gray-400 {
+  background-color: var(--md-sys-color-outline) !important;
+}
+
+/* ── 23. PROFILE PAGE SECTION CARDS ────────────────────────── */
+
+html.material .rounded-xl.shadow-sm.border.p-6 {
+  background-color: var(--md-sys-color-surface-container-low) !important;
+  border: none !important;
+  border-radius: var(--md-sys-shape-corner-large) !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.06) !important;
+}
+
+/* ── 24. TOGGLE SWITCH CHECKED STATE ───────────────────────── */
+
+html.material input[type="checkbox"].sr-only:checked ~ div,
+html.material input[type="checkbox"].sr-only:checked + div {
+  background-color: var(--md-sys-color-primary) !important;
+}
+
+/* ── 25. FOCUS RING ─────────────────────────────────────────── */
+
+html.material :focus-visible {
+  outline: 2px solid var(--md-sys-color-primary) !important;
+  outline-offset: 2px !important;
+}

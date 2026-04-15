@@ -1,0 +1,43 @@
+services:
+  server:
+    build:
+      context: ./server
+    container_name: warrantyvault-server
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - PORT=3001
+      - CLIENT_URL=http://localhost:8080
+      - JWT_SECRET=${JWT_SECRET:-change-me-in-production}
+      - DB_PATH=/app/data/warrantyvault.db
+      - UPLOADS_DIR=/app/uploads
+      - SMTP_HOST=${SMTP_HOST:-}
+      - SMTP_PORT=${SMTP_PORT:-587}
+      - SMTP_USER=${SMTP_USER:-}
+      - SMTP_PASS=${SMTP_PASS:-}
+      - FROM_EMAIL=${FROM_EMAIL:-noreply@warrantyvault.local}
+    volumes:
+      - server-data:/app/data
+      - server-uploads:/app/uploads
+    networks:
+      - warrantyvault
+
+  client:
+    build:
+      context: ./client
+    container_name: warrantyvault-client
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    depends_on:
+      - server
+    networks:
+      - warrantyvault
+
+volumes:
+  server-data:
+  server-uploads:
+
+networks:
+  warrantyvault:
+    driver: bridge

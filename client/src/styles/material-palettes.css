@@ -1,0 +1,152 @@
+/* ============================================================
+   Material Design 3 — Color Palette Overrides
+   Each palette overrides the primary, secondary, and related
+   system tokens. Applied via html.material.palette-* class.
+   Component tokens automatically follow via var(--md-sys-*).
+   ============================================================ */
+
+/* ── PURPLE (default — mirrors material-theme.css base) ──────
+   No functional change; defined so the JS class toggle works.
+   ─────────────────────────────────────────────────────────── */
+html.material.palette-purple {
+  --md-sys-color-primary:                     #534AB7;
+  --md-sys-color-on-primary:                  #FFFFFF;
+  --md-sys-color-primary-container:           #E6DFFF;
+  --md-sys-color-on-primary-container:        #160065;
+  --md-sys-color-secondary:                   #5E5B72;
+  --md-sys-color-on-secondary:                #FFFFFF;
+  --md-sys-color-secondary-container:         #E4DFFF;
+  --md-sys-color-on-secondary-container:      #1A1730;
+  --md-sys-color-inverse-primary:             #C9BEFF;
+}
+html.material.dark.palette-purple {
+  --md-sys-color-primary:                     #C9BEFF;
+  --md-sys-color-on-primary:                  #2D009B;
+  --md-sys-color-primary-container:           #4436A5;
+  --md-sys-color-on-primary-container:        #E6DFFF;
+  --md-sys-color-secondary:                   #C7C3DC;
+  --md-sys-color-on-secondary:                #302D45;
+  --md-sys-color-secondary-container:         #47435C;
+  --md-sys-color-on-secondary-container:      #E4DFFF;
+  --md-sys-color-inverse-primary:             #534AB7;
+}
+
+/* ── BLUE (seed: #1967D2 — Google Blue) ──────────────────── */
+html.material.palette-blue {
+  --md-sys-color-primary:                     #1967D2;
+  --md-sys-color-on-primary:                  #FFFFFF;
+  --md-sys-color-primary-container:           #D3E3FD;
+  --md-sys-color-on-primary-container:        #001D35;
+  --md-sys-color-secondary:                   #545F71;
+  --md-sys-color-on-secondary:                #FFFFFF;
+  --md-sys-color-secondary-container:         #D8E5FF;
+  --md-sys-color-on-secondary-container:      #0E1C2E;
+  --md-sys-color-inverse-primary:             #A8C8FF;
+}
+html.material.dark.palette-blue {
+  --md-sys-color-primary:                     #A8C8FF;
+  --md-sys-color-on-primary:                  #003060;
+  --md-sys-color-primary-container:           #004494;
+  --md-sys-color-on-primary-container:        #D3E3FD;
+  --md-sys-color-secondary:                   #BAC8E4;
+  --md-sys-color-on-secondary:                #253142;
+  --md-sys-color-secondary-container:         #3B4859;
+  --md-sys-color-on-secondary-container:      #D8E5FF;
+  --md-sys-color-inverse-primary:             #1967D2;
+}
+
+/* ── GREEN (seed: #1B8043 — Material Green) ──────────────── */
+html.material.palette-green {
+  --md-sys-color-primary:                     #1B8043;
+  --md-sys-color-on-primary:                  #FFFFFF;
+  --md-sys-color-primary-container:           #CEEFCE;
+  --md-sys-color-on-primary-container:        #002108;
+  --md-sys-color-secondary:                   #516351;
+  --md-sys-color-on-secondary:                #FFFFFF;
+  --md-sys-color-secondary-container:         #D4EACF;
+  --md-sys-color-on-secondary-container:      #0F2010;
+  --md-sys-color-inverse-primary:             #72DC87;
+}
+html.material.dark.palette-green {
+  --md-sys-color-primary:                     #72DC87;
+  --md-sys-color-on-primary:                  #003913;
+  --md-sys-color-primary-container:           #00531F;
+  --md-sys-color-on-primary-container:        #CEEFCE;
+  --md-sys-color-secondary:                   #B8CCB4;
+  --md-sys-color-on-secondary:                #243423;
+  --md-sys-color-secondary-container:         #3A4B38;
+  --md-sys-color-on-secondary-container:      #D4EACF;
+  --md-sys-color-inverse-primary:             #1B8043;
+}
+
+/* ── TEAL (seed: #00766A — Material Teal) ────────────────── */
+html.material.palette-teal {
+  --md-sys-color-primary:                     #00766A;
+  --md-sys-color-on-primary:                  #FFFFFF;
+  --md-sys-color-primary-container:           #CDFAF3;
+  --md-sys-color-on-primary-container:        #002019;
+  --md-sys-color-secondary:                   #4A6360;
+  --md-sys-color-on-secondary:                #FFFFFF;
+  --md-sys-color-secondary-container:         #CCE8E4;
+  --md-sys-color-on-secondary-container:      #051F1D;
+  --md-sys-color-inverse-primary:             #53DDD0;
+}
+html.material.dark.palette-teal {
+  --md-sys-color-primary:                     #53DDD0;
+  --md-sys-color-on-primary:                  #003733;
+  --md-sys-color-primary-container:           #00504A;
+  --md-sys-color-on-primary-container:        #CDFAF3;
+  --md-sys-color-secondary:                   #B1CCC8;
+  --md-sys-color-on-secondary:                #1B3532;
+  --md-sys-color-secondary-container:         #324B48;
+  --md-sys-color-on-secondary-container:      #CCE8E4;
+  --md-sys-color-inverse-primary:             #00766A;
+}
+
+/* ── ROSE (seed: #C41E3A — Crimson Rose) ─────────────────── */
+html.material.palette-rose {
+  --md-sys-color-primary:                     #B71C3B;
+  --md-sys-color-on-primary:                  #FFFFFF;
+  --md-sys-color-primary-container:           #FFDAD9;
+  --md-sys-color-on-primary-container:        #40000E;
+  --md-sys-color-secondary:                   #775655;
+  --md-sys-color-on-secondary:                #FFFFFF;
+  --md-sys-color-secondary-container:         #FFDAD9;
+  --md-sys-color-on-secondary-container:      #2C1514;
+  --md-sys-color-inverse-primary:             #FFB3B2;
+}
+html.material.dark.palette-rose {
+  --md-sys-color-primary:                     #FFB3B2;
+  --md-sys-color-on-primary:                  #680019;
+  --md-sys-color-primary-container:           #920027;
+  --md-sys-color-on-primary-container:        #FFDAD9;
+  --md-sys-color-secondary:                   #E6BDBB;
+  --md-sys-color-on-secondary:                #442928;
+  --md-sys-color-secondary-container:         #5D3F3E;
+  --md-sys-color-on-secondary-container:      #FFDAD9;
+  --md-sys-color-inverse-primary:             #B71C3B;
+}
+
+/* ── INDIGO (seed: #3949AB — Deep Indigo) ────────────────── */
+html.material.palette-indigo {
+  --md-sys-color-primary:                     #3949AB;
+  --md-sys-color-on-primary:                  #FFFFFF;
+  --md-sys-color-primary-container:           #DEE0FF;
+  --md-sys-color-on-primary-container:        #000F5C;
+  --md-sys-color-secondary:                   #595D72;
+  --md-sys-color-on-secondary:                #FFFFFF;
+  --md-sys-color-secondary-container:         #DDE1F9;
+  --md-sys-color-on-secondary-container:      #161B2C;
+  --md-sys-color-inverse-primary:             #BAC3FF;
+}
+html.material.dark.palette-indigo {
+  --md-sys-color-primary:                     #BAC3FF;
+  --md-sys-color-on-primary:                  #1E257B;
+  --md-sys-color-primary-container:           #2F3690;
+  --md-sys-color-on-primary-container:        #DEE0FF;
+  --md-sys-color-secondary:                   #C1C5DD;
+  --md-sys-color-on-secondary:                #2B3042;
+  --md-sys-color-secondary-container:         #424659;
+  --md-sys-color-on-secondary-container:      #DDE1F9;
+  --md-sys-color-inverse-primary:             #3949AB;
+}

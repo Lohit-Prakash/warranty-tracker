@@ -1,0 +1,68 @@
+@import './styles/material-theme.css';
+@import './styles/material-palettes.css';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+body {
+  @apply bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-gray-100;
+}
+
+* {
+  @apply transition-colors duration-200;
+}
+
+/* ── Material Design theme overrides ── */
+html.material,
+html.material body,
+html.material * {
+  font-family: 'Roboto', sans-serif !important;
+}
+
+/* Sharp corners */
+html.material .rounded-xl,
+html.material .rounded-2xl { border-radius: 0 !important; }
+html.material .rounded-lg  { border-radius: 4px !important; }
+html.material .rounded-md  { border-radius: 4px !important; }
+
+/* Remove subtle borders on cards, replace with elevation */
+html.material .border.border-gray-200 { border: none !important; }
+
+/* Elevation shadows */
+html.material .shadow-sm {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.14), 0 1px 3px rgba(0,0,0,0.08) !important;
+}
+
+/* Stat card top-accent strip */
+html.material .stat-card {
+  border-top: 4px solid transparent !important;
+  border-bottom: none !important;
+  border-left: none !important;
+  border-right: none !important;
+}
+html.material .stat-card--primary { border-top-color: #534AB7 !important; }
+html.material .stat-card--green   { border-top-color: #16a34a !important; }
+html.material .stat-card--amber   { border-top-color: #d97706 !important; }
+html.material .stat-card--red     { border-top-color: #dc2626 !important; }
+html.material .stat-card--gray    { border-top-color: #9ca3af !important; }
+
+/* Uppercase section heading labels */
+html.material h2.text-base {
+  text-transform: uppercase;
+  font-size: 0.7rem !important;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+}
+
+/* Bolder page headings */
+html.material h1 { font-weight: 900; letter-spacing: -0.02em; }
+
+/* Button sharp corners */
+html.material button.rounded-lg,
+html.material button.rounded-xl { border-radius: 4px !important; }

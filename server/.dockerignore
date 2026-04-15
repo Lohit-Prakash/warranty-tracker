@@ -1,0 +1,9 @@
+node_modules
+dist
+.test-data
+uploads
+warrantyvault.db
+warrantyvault.db-*
+*.log
+.env
+.env.local

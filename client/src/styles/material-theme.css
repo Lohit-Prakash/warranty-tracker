@@ -1,0 +1,227 @@
+@import './material-overrides.css';
+
+/* ============================================================
+   Material Design 3 — WarrantyVault purple theme
+   Seed color: #534AB7 (Tailwind primary-600)
+   All tokens scoped to html.material to prevent leakage.
+   ============================================================ */
+
+/* ── Light scheme ─────────────────────────────────────────── */
+html.material {
+  /* Primary */
+  --md-sys-color-primary:                     #534AB7;
+  --md-sys-color-on-primary:                  #FFFFFF;
+  --md-sys-color-primary-container:           #E6DFFF;
+  --md-sys-color-on-primary-container:        #160065;
+
+  /* Secondary (muted purple-grey) */
+  --md-sys-color-secondary:                   #5E5B72;
+  --md-sys-color-on-secondary:                #FFFFFF;
+  --md-sys-color-secondary-container:         #E4DFFF;
+  --md-sys-color-on-secondary-container:      #1A1730;
+
+  /* Tertiary (pink-violet shift) */
+  --md-sys-color-tertiary:                    #7B4F77;
+  --md-sys-color-on-tertiary:                 #FFFFFF;
+  --md-sys-color-tertiary-container:          #FFD7F5;
+  --md-sys-color-on-tertiary-container:       #300A2F;
+
+  /* Error */
+  --md-sys-color-error:                       #B3261E;
+  --md-sys-color-on-error:                    #FFFFFF;
+  --md-sys-color-error-container:             #F9DEDC;
+  --md-sys-color-on-error-container:          #410E0B;
+
+  /* Background */
+  --md-sys-color-background:                  #FFFBFE;
+  --md-sys-color-on-background:               #1C1B1F;
+
+  /* Surface */
+  --md-sys-color-surface:                     #FFFBFE;
+  --md-sys-color-on-surface:                  #1C1B1F;
+  --md-sys-color-surface-variant:             #E7E0EC;
+  --md-sys-color-on-surface-variant:          #49454F;
+  --md-sys-color-surface-bright:              #FFFBFE;
+  --md-sys-color-surface-dim:                 #DDD8E1;
+  --md-sys-color-surface-container-lowest:    #FFFFFF;
+  --md-sys-color-surface-container-low:       #F7F2FA;
+  --md-sys-color-surface-container:           #F3EDF7;
+  --md-sys-color-surface-container-high:      #ECE6F0;
+  --md-sys-color-surface-container-highest:   #E6E0E9;
+
+  /* Outline */
+  --md-sys-color-outline:                     #79747E;
+  --md-sys-color-outline-variant:             #CAC4D0;
+
+  /* Inverse */
+  --md-sys-color-inverse-surface:             #313033;
+  --md-sys-color-inverse-on-surface:          #F4EFF4;
+  --md-sys-color-inverse-primary:             #C9BEFF;
+
+  /* Scrim */
+  --md-sys-color-scrim:                       #000000;
+  --md-sys-color-shadow:                      #000000;
+
+  /* Custom: Warning (amber) — used for expiry alert banner */
+  --md-custom-color-warning-container:        #FFF3CD;
+  --md-custom-color-on-warning-container:     #4A3800;
+
+  /* ── Shape tokens ─────────────────────────────────────── */
+  --md-sys-shape-corner-none:                 0px;
+  --md-sys-shape-corner-extra-small:          4px;
+  --md-sys-shape-corner-small:                8px;
+  --md-sys-shape-corner-medium:               12px;
+  --md-sys-shape-corner-large:                16px;
+  --md-sys-shape-corner-extra-large:          28px;
+  --md-sys-shape-corner-full:                 9999px;
+
+  /* ── Typography reference tokens ────────────────────────── */
+  --md-ref-typeface-brand:                    'Roboto', sans-serif;
+  --md-ref-typeface-plain:                    'Roboto', sans-serif;
+
+  /* ── Component: md-filled-button ─────────────────────────── */
+  --md-filled-button-container-shape:         var(--md-sys-shape-corner-full);
+  --md-filled-button-container-color:         var(--md-sys-color-primary);
+  --md-filled-button-label-text-color:        var(--md-sys-color-on-primary);
+  --md-filled-button-hover-label-text-color:  var(--md-sys-color-on-primary);
+  --md-filled-button-focus-label-text-color:  var(--md-sys-color-on-primary);
+  --md-filled-button-pressed-label-text-color:var(--md-sys-color-on-primary);
+  --md-filled-button-hover-container-color:   var(--md-sys-color-primary);
+
+  /* ── Component: md-outlined-button ──────────────────────── */
+  --md-outlined-button-container-shape:       var(--md-sys-shape-corner-full);
+  --md-outlined-button-outline-color:         var(--md-sys-color-primary);
+  --md-outlined-button-label-text-color:      var(--md-sys-color-primary);
+  --md-outlined-button-hover-label-text-color:var(--md-sys-color-primary);
+  --md-outlined-button-focus-outline-color:   var(--md-sys-color-primary);
+
+  /* ── Component: md-text-button ───────────────────────────── */
+  --md-text-button-container-shape:           var(--md-sys-shape-corner-full);
+  --md-text-button-label-text-color:          var(--md-sys-color-primary);
+  --md-text-button-hover-label-text-color:    var(--md-sys-color-primary);
+
+  /* ── Component: md-filled-text-field ────────────────────── */
+  --md-filled-text-field-container-color:           var(--md-sys-color-surface-container-high);
+  --md-filled-text-field-container-shape-start-start: var(--md-sys-shape-corner-extra-small);
+  --md-filled-text-field-container-shape-start-end:   var(--md-sys-shape-corner-extra-small);
+  --md-filled-text-field-container-shape-end-start:   0px;
+  --md-filled-text-field-container-shape-end-end:     0px;
+  --md-filled-text-field-active-indicator-color:      var(--md-sys-color-on-surface-variant);
+  --md-filled-text-field-focus-active-indicator-color: var(--md-sys-color-primary);
+  --md-filled-text-field-label-text-color:            var(--md-sys-color-on-surface-variant);
+  --md-filled-text-field-focus-label-text-color:      var(--md-sys-color-primary);
+  --md-filled-text-field-input-text-color:            var(--md-sys-color-on-surface);
+  --md-filled-text-field-error-active-indicator-color: var(--md-sys-color-error);
+  --md-filled-text-field-error-focus-active-indicator-color: var(--md-sys-color-error);
+  --md-filled-text-field-error-label-text-color:      var(--md-sys-color-error);
+  --md-filled-text-field-error-focus-label-text-color: var(--md-sys-color-error);
+  --md-filled-text-field-error-supporting-text-color: var(--md-sys-color-error);
+
+  /* ── Component: md-filled-select ────────────────────────── */
+  --md-filled-select-text-field-container-color:      var(--md-sys-color-surface-container-high);
+  --md-filled-select-text-field-active-indicator-color: var(--md-sys-color-on-surface-variant);
+  --md-filled-select-text-field-focus-active-indicator-color: var(--md-sys-color-primary);
+  --md-filled-select-text-field-label-text-color:     var(--md-sys-color-on-surface-variant);
+  --md-filled-select-text-field-focus-label-text-color: var(--md-sys-color-primary);
+  --md-filled-select-text-field-input-text-color:     var(--md-sys-color-on-surface);
+  --md-filled-select-text-field-container-shape-start-start: var(--md-sys-shape-corner-extra-small);
+  --md-filled-select-text-field-container-shape-start-end:   var(--md-sys-shape-corner-extra-small);
+  --md-filled-select-text-field-container-shape-end-start:   0px;
+  --md-filled-select-text-field-container-shape-end-end:     0px;
+
+  /* ── Component: md-dialog ────────────────────────────────── */
+  --md-dialog-container-color:                var(--md-sys-color-surface-container-high);
+  --md-dialog-container-shape:                var(--md-sys-shape-corner-extra-large);
+  --md-dialog-headline-color:                 var(--md-sys-color-on-surface);
+  --md-dialog-supporting-text-color:          var(--md-sys-color-on-surface-variant);
+
+  /* ── Component: md-checkbox ──────────────────────────────── */
+  --md-checkbox-selected-container-color:     var(--md-sys-color-primary);
+  --md-checkbox-selected-icon-color:          var(--md-sys-color-on-primary);
+  --md-checkbox-selected-hover-container-color: var(--md-sys-color-primary);
+  --md-checkbox-selected-focus-container-color: var(--md-sys-color-primary);
+  --md-checkbox-selected-pressed-container-color: var(--md-sys-color-primary);
+  --md-checkbox-outline-color:                var(--md-sys-color-on-surface-variant);
+}
+
+/* ── Dark scheme ──────────────────────────────────────────────
+   Applied when html has BOTH .material AND .dark classes.
+   The app uses useDarkMode which adds 'dark' to <html>.
+   ──────────────────────────────────────────────────────────── */
+html.material.dark {
+  --md-sys-color-primary:                     #C9BEFF;
+  --md-sys-color-on-primary:                  #2D009B;
+  --md-sys-color-primary-container:           #4436A5;
+  --md-sys-color-on-primary-container:        #E6DFFF;
+
+  --md-sys-color-secondary:                   #C7C3DC;
+  --md-sys-color-on-secondary:                #302D45;
+  --md-sys-color-secondary-container:         #47435C;
+  --md-sys-color-on-secondary-container:      #E4DFFF;
+
+  --md-sys-color-tertiary:                    #EFBBEA;
+  --md-sys-color-on-tertiary:                 #482045;
+  --md-sys-color-tertiary-container:          #61375D;
+  --md-sys-color-on-tertiary-container:       #FFD7F5;
+
+  --md-sys-color-error:                       #F2B8B5;
+  --md-sys-color-on-error:                    #601410;
+  --md-sys-color-error-container:             #8C1D18;
+  --md-sys-color-on-error-container:          #F9DEDC;
+
+  --md-sys-color-background:                  #1C1B1F;
+  --md-sys-color-on-background:               #E6E1E5;
+
+  --md-sys-color-surface:                     #1C1B1F;
+  --md-sys-color-on-surface:                  #E6E1E5;
+  --md-sys-color-surface-variant:             #49454F;
+  --md-sys-color-on-surface-variant:          #CAC4D0;
+  --md-sys-color-surface-bright:              #3B383E;
+  --md-sys-color-surface-dim:                 #1C1B1F;
+  --md-sys-color-surface-container-lowest:    #0F0D13;
+  --md-sys-color-surface-container-low:       #1E1B27;
+  --md-sys-color-surface-container:           #211F2B;
+  --md-sys-color-surface-container-high:      #2B2836;
+  --md-sys-color-surface-container-highest:   #353240;
+
+  --md-sys-color-outline:                     #938F99;
+  --md-sys-color-outline-variant:             #49454F;
+
+  --md-sys-color-inverse-surface:             #E6E1E5;
+  --md-sys-color-inverse-on-surface:          #313033;
+  --md-sys-color-inverse-primary:             #534AB7;
+
+  /* Custom: Warning (amber) — dark mode */
+  --md-custom-color-warning-container:        #4A3800;
+  --md-custom-color-on-warning-container:     #FFE082;
+}
+
+/* ── Danger button variant ────────────────────────────────────
+   Applied via className="md-button--danger" on md-filled-button
+   ──────────────────────────────────────────────────────────── */
+html.material .md-button--danger {
+  --md-filled-button-container-color:         var(--md-sys-color-error);
+  --md-filled-button-label-text-color:        var(--md-sys-color-on-error);
+  --md-filled-button-hover-container-color:   var(--md-sys-color-error);
+  --md-filled-button-hover-label-text-color:  var(--md-sys-color-on-error);
+}
+
+/* ── Layout fixes for full-width form controls ───────────────── */
+html.material md-filled-text-field,
+html.material md-filled-select {
+  width: 100%;
+  display: block;
+}
+
+/* ── Suppress Tailwind global transition on MD animated elements
+   (prevents fighting the ripple and dialog open/close animations)
+   ──────────────────────────────────────────────────────────────── */
+html.material md-filled-button,
+html.material md-outlined-button,
+html.material md-text-button,
+html.material md-dialog,
+html.material md-filled-text-field,
+html.material md-filled-select,
+html.material md-checkbox {
+  transition: none !important;
+}
